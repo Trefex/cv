@@ -1,0 +1,14 @@
+[0] Config.pm:318> INFO - This is Biber 1.8
+[0] Config.pm:321> INFO - Logfile is 'Trefois_CV.blg'
+[108] biber-MSWIN:272> INFO - === %a %b %e, %Y, %H:%M:%S
+[109] Biber.pm:333> INFO - Reading 'Trefois_CV.bcf'
+[216] Biber.pm:607> INFO - Using all citekeys in bib section 0
+[258] Biber.pm:3053> INFO - Processing section 0
+[297] Biber.pm:3190> INFO - Looking for bibtex format file 'publications.bib' for section 0
+[307] bibtex.pm:937> INFO - Decoding LaTeX character macros into UTF-8
+[316] bibtex.pm:812> INFO - Found BibTeX data source 'publications.bib'
+[467] Biber.pm:2939> INFO - Overriding locale 'en_EN' default tailoring 'variable = shifted' with 'variable = non-ignorable'
+[468] Biber.pm:2945> INFO - Sorting 'entry' list 'ydnt' keys
+[468] Biber.pm:2949> INFO - No sort tailoring available for locale 'en_EN'
+[486] bbl.pm:482> INFO - Writing 'Trefois_CV.bbl' with encoding 'UTF-8'
+[492] bbl.pm:555> INFO - Output to Trefois_CV.bbl

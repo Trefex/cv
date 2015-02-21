@@ -1,0 +1,261 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{entry}{ydnt}
+    \entry{Fujita2013}{article}{}
+      \name{labelname}{19}{}{%
+        {{uniquename=0,hash=f718931c0743b59fe26c688476e6ade0}{Fujita}{F\bibinitperiod}{Kazuhiro\bibnamedelima a.}{K\bibinitperiod\bibinitdelim a\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=374fff39bcb2a07bc7c882c701849952}{Ostaszewski}{O\bibinitperiod}{Marek}{M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=1dbefe2b79d0d72d17ec6fdb1d31823f}{Matsuoka}{M\bibinitperiod}{Yukiko}{Y\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=aee0935e2c7e08b5b404009a9ca13f25}{Ghosh}{G\bibinitperiod}{Samik}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=16029078455b290bdeec683fddad78b7}{Glaab}{G\bibinitperiod}{Enrico}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bb60283f458435db7d2ea1311c7fa895}{Trefois}{T\bibinitperiod}{Christophe}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c60a06aec064999bfa4e7ccc0284b630}{Crespo}{C\bibinitperiod}{Isaac}{I\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c5954c53c7d364b54c07d56a5448155a}{Perumal}{P\bibinitperiod}{Thanneer\bibnamedelima M.}{T\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=b241aae9ee95db37bde3fe0f337dcf1b}{Jurkowski}{J\bibinitperiod}{Wiktor}{W\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=4c03d8901ad5150d654c608fcb3d7997}{Antony}{A\bibinitperiod}{Paul\bibnamedelimb M.\bibnamedelimi a.}{P\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim a\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=731d0a9b43e9a603958f5fa251be4127}{Diederich}{D\bibinitperiod}{Nico}{N\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=739a7b2b24a3df68712e210209fc7bfe}{Buttini}{B\bibinitperiod}{Manuel}{M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=3c152fcc6b50d8f0c8c7514fede92959}{Kodama}{K\bibinitperiod}{Akihiko}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=f82020771861117caaf4ee6789709ada}{Satagopam}{S\bibinitperiod}{Venkata\bibnamedelima P.}{V\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=9c38032913c2895ba9f9b477effbaba4}{Eifes}{E\bibinitperiod}{Serge}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=e19efc312acd1ea2d00875700a4850c1}{{Del\bibnamedelimb Sol}}{D\bibinitperiod}{Antonio}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=ceccff4fac48c6e08a687d9200e01878}{Schneider}{S\bibinitperiod}{Reinhard}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=ccbec67ed2a448309bfd4a1cec5e10c8}{Kitano}{K\bibinitperiod}{Hiroaki}{H\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=cadf94b997b42df80d789855ecc43552}{Balling}{B\bibinitperiod}{Rudi}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{19}{}{%
+        {{uniquename=0,hash=f718931c0743b59fe26c688476e6ade0}{Fujita}{F\bibinitperiod}{Kazuhiro\bibnamedelima a.}{K\bibinitperiod\bibinitdelim a\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=374fff39bcb2a07bc7c882c701849952}{Ostaszewski}{O\bibinitperiod}{Marek}{M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=1dbefe2b79d0d72d17ec6fdb1d31823f}{Matsuoka}{M\bibinitperiod}{Yukiko}{Y\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=aee0935e2c7e08b5b404009a9ca13f25}{Ghosh}{G\bibinitperiod}{Samik}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=16029078455b290bdeec683fddad78b7}{Glaab}{G\bibinitperiod}{Enrico}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bb60283f458435db7d2ea1311c7fa895}{Trefois}{T\bibinitperiod}{Christophe}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c60a06aec064999bfa4e7ccc0284b630}{Crespo}{C\bibinitperiod}{Isaac}{I\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c5954c53c7d364b54c07d56a5448155a}{Perumal}{P\bibinitperiod}{Thanneer\bibnamedelima M.}{T\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=b241aae9ee95db37bde3fe0f337dcf1b}{Jurkowski}{J\bibinitperiod}{Wiktor}{W\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=4c03d8901ad5150d654c608fcb3d7997}{Antony}{A\bibinitperiod}{Paul\bibnamedelimb M.\bibnamedelimi a.}{P\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim a\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=731d0a9b43e9a603958f5fa251be4127}{Diederich}{D\bibinitperiod}{Nico}{N\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=739a7b2b24a3df68712e210209fc7bfe}{Buttini}{B\bibinitperiod}{Manuel}{M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=3c152fcc6b50d8f0c8c7514fede92959}{Kodama}{K\bibinitperiod}{Akihiko}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=f82020771861117caaf4ee6789709ada}{Satagopam}{S\bibinitperiod}{Venkata\bibnamedelima P.}{V\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=9c38032913c2895ba9f9b477effbaba4}{Eifes}{E\bibinitperiod}{Serge}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=e19efc312acd1ea2d00875700a4850c1}{{Del\bibnamedelimb Sol}}{D\bibinitperiod}{Antonio}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=ceccff4fac48c6e08a687d9200e01878}{Schneider}{S\bibinitperiod}{Reinhard}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=ccbec67ed2a448309bfd4a1cec5e10c8}{Kitano}{K\bibinitperiod}{Hiroaki}{H\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=cadf94b997b42df80d789855ecc43552}{Balling}{B\bibinitperiod}{Rudi}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{0e7f1993180a5ee6ff41aad5500ab12e}
+      \strng{fullhash}{29292a062aa4415dfd290fb18bf4e8bb}
+      \field{sortinit}{2}
+      \field{labelyear}{2014}
+      \field{labelmonth}{02}
+      \field{datelabelsource}{}
+      \field{labeltitle}{{Integrating pathways of Parkinson's disease in a molecular interaction map.}}
+      \field{abstract}{Parkinson's disease (PD) is a major neurodegenerative chronic disease, most likely caused by a complex interplay of genetic and environmental factors. Information on various aspects of PD pathogenesis is rapidly increasing and needs to be efficiently organized, so that the resulting data is available for exploration and analysis. Here we introduce a computationally tractable, comprehensive molecular interaction map of PD. This map integrates pathways implicated in PD pathogenesis such as synaptic and mitochondrial dysfunction, impaired protein degradation, alpha-synuclein pathobiology and neuroinflammation. We also present bioinformatics tools for the analysis, enrichment and annotation of the map, allowing the research community to open new avenues in PD research. The PD map is accessible at http://minerva.uni.lu/pd\_map .}
+      \field{isbn}{1203501384894}
+      \field{issn}{1559-1182}
+      \field{journaltitle}{Mol. Neurobiol.}
+      \field{month}{02}
+      \field{number}{1}
+      \field{title}{{Integrating pathways of Parkinson's disease in a molecular interaction map.}}
+      \field{volume}{49}
+      \field{year}{2014}
+      \field{pages}{88\bibrangedash 102}
+      \verb{doi}
+      \verb 10.1007/s12035-013-8489-4
+      \endverb
+      \verb{file}
+      \verb :C$\backslash$:/Users/Treftower/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Fujita et al. - 2013 - Integrating Pathways of Parkinson's Disease in a Molecular Interaction Map.pdf:pdf
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/s12035-013-8489-4%20http://www.ncbi.nlm.nih.gov/pubmed/23832570
+      \endverb
+      \keyw{bioinformatics,knowledge repository,molecular,neuropathology,parkinson,s disease}
+    \endentry
+    \entry{Antony2013a}{article}{}
+      \name{labelname}{5}{}{%
+        {{uniquename=0,hash=6860032fdc30c71ed5b1fcfe1b794cba}{Antony}{A\bibinitperiod}{Paul\bibnamedelimb Michel\bibnamedelima Aloyse}{P\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bb60283f458435db7d2ea1311c7fa895}{Trefois}{T\bibinitperiod}{Christophe}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=d009ac91935ce8430140e4bd67815805}{Stojanovic}{S\bibinitperiod}{Aleksandar}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=a279cc15e67c42acd4251608dd70e908}{Baumuratov}{B\bibinitperiod}{Aidos\bibnamedelima Sagatovich}{A\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=aa549dd55eefc59332f57af7ff261b6f}{Kozak}{K\bibinitperiod}{Karol}{K\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{5}{}{%
+        {{uniquename=0,hash=6860032fdc30c71ed5b1fcfe1b794cba}{Antony}{A\bibinitperiod}{Paul\bibnamedelimb Michel\bibnamedelima Aloyse}{P\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bb60283f458435db7d2ea1311c7fa895}{Trefois}{T\bibinitperiod}{Christophe}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=d009ac91935ce8430140e4bd67815805}{Stojanovic}{S\bibinitperiod}{Aleksandar}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=a279cc15e67c42acd4251608dd70e908}{Baumuratov}{B\bibinitperiod}{Aidos\bibnamedelima Sagatovich}{A\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=aa549dd55eefc59332f57af7ff261b6f}{Kozak}{K\bibinitperiod}{Karol}{K\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{700b778a3ad19249ed7f29688e43f196}
+      \strng{fullhash}{a589f3340afd49b2744c9039cfad3840}
+      \field{sortinit}{2}
+      \field{labelyear}{2013}
+      \field{labelmonth}{01}
+      \field{datelabelsource}{}
+      \field{labeltitle}{{Light microscopy applications in systems biology: opportunities and challenges.}}
+      \field{abstract}{Biological systems present multiple scales of complexity, ranging from molecules to entire populations. Light microscopy is one of the least invasive techniques used to access information from various biological scales in living cells. The combination of molecular biology and imaging provides a bottom-up tool for direct insight into how molecular processes work on a cellular scale. However, imaging can also be used as a top-down approach to study the behavior of a system without detailed prior knowledge about its underlying molecular mechanisms. In this review, we highlight the recent developments on microscopy-based systems analyses and discuss the complementary opportunities and different challenges with high-content screening and high-throughput imaging. Furthermore, we provide a comprehensive overview of the available platforms that can be used for image analysis, which enable community-driven efforts in the development of image-based systems biology.}
+      \field{issn}{1478-811X}
+      \field{journaltitle}{Cell Commun. Signal.}
+      \field{month}{01}
+      \field{number}{1}
+      \field{title}{{Light microscopy applications in systems biology: opportunities and challenges.}}
+      \field{volume}{11}
+      \field{year}{2013}
+      \field{pages}{24}
+      \verb{doi}
+      \verb 10.1186/1478-811X-11-24
+      \endverb
+      \verb{file}
+      \verb :D$\backslash$:/Documents/Mendeley Desktop/Antony et al/Cell communication and signaling CCS/Antony et al. - 2013 - Light microscopy applications in systems biology opportunities and challenges.pdf:pdf
+      \endverb
+      \verb{url}
+      \verb http://www.biosignaling.com/content/11/1/24%20http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3627909%5C&tool=pmcentrez%5C&rendertype=abstract
+      \endverb
+    \endentry
+    \entry{SorniottiAlessandro2009}{article}{}
+      \name{labelname}{6}{}{%
+        {{uniquename=0,hash=938ea075c7d4f0fe21ce3b4c6a218702}{Sorniotti}{S\bibinitperiod}{Alessandro}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=a1c6aecc0efab4aac0a1e4f2571e2a43}{Molva}{M\bibinitperiod}{Refik}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=3a27c0c2ed6aec973187cc2cf971ede4}{Gomez}{G\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bb60283f458435db7d2ea1311c7fa895}{Trefois}{T\bibinitperiod}{Christophe}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=20f7f6b85a96d11c7d269ee6c01787cc}{Laube}{L\bibinitperiod}{Annett}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c679f6c2da4cc70380b51d85f6e22b7d}{Scaglioso}{S\bibinitperiod}{Piervito}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{6}{}{%
+        {{uniquename=0,hash=938ea075c7d4f0fe21ce3b4c6a218702}{Sorniotti}{S\bibinitperiod}{Alessandro}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=a1c6aecc0efab4aac0a1e4f2571e2a43}{Molva}{M\bibinitperiod}{Refik}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=3a27c0c2ed6aec973187cc2cf971ede4}{Gomez}{G\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bb60283f458435db7d2ea1311c7fa895}{Trefois}{T\bibinitperiod}{Christophe}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=20f7f6b85a96d11c7d269ee6c01787cc}{Laube}{L\bibinitperiod}{Annett}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c679f6c2da4cc70380b51d85f6e22b7d}{Scaglioso}{S\bibinitperiod}{Piervito}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{a1d3f07605e89795b71c731433dc6939}
+      \strng{fullhash}{62e65fcacc60d44fe71b8b9578c6e9e3}
+      \field{sortinit}{2}
+      \field{labelyear}{2009}
+      \field{labelmonth}{07}
+      \field{datelabelsource}{}
+      \field{labeltitle}{{Efficient Access Control for Wireless Sensor Data}}
+      \field{abstract}{Abstract Although very developed in many sectors (databases, filesystems), access control schemes are still somewhat elusive when it comes to wireless sensor net- works. However, it is clear that many WSN systems—such as healthcare and automotive ones—need a controlled access to data that sensor nodes produce, given its high sensitivity. Enforcing access control in wireless sensor networks is a particularly difficult task due to the limited computational capacity of wireless sensor nodes. In this paper we present a full-fledged access control scheme for wireless sensor data. We enforce access control through data encryption, thus embedding access control in sensor data units. We also propose a lightweight key generation mechanism, based on cryptographic hash functions, that allows for hierarchical key derivation. The suggested pro- tocol only relies on simple operations, does not require interactions between nodes and data consumers and has minimal storage requirements.}
+      \field{issn}{1068-9605}
+      \field{journaltitle}{Int. J. Wirel. Inf. Networks}
+      \field{month}{07}
+      \field{number}{3}
+      \field{title}{{Efficient Access Control for Wireless Sensor Data}}
+      \field{volume}{16}
+      \field{year}{2009}
+      \field{pages}{165\bibrangedash 174}
+      \verb{doi}
+      \verb 10.1007/s10776-009-0102-4
+      \endverb
+      \verb{file}
+      \verb :D$\backslash$:/Documents/Mendeley Desktop/Sorniotti et al/International Journal of Wireless Information Networks/Sorniotti et al. - 2009 - Efficient Access Control for Wireless Sensor Data.pdf:pdf
+      \endverb
+      \verb{url}
+      \verb http://www.springerlink.com/content/lkv8m8g6w3883430/%20http://link.springer.com/10.1007/s10776-009-0102-4
+      \endverb
+    \endentry
+    \entry{Gmez2008}{inproceedings}{}
+      \name{labelname}{7}{}{%
+        {{uniquename=0,hash=3a27c0c2ed6aec973187cc2cf971ede4}{Gomez}{G\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=20f7f6b85a96d11c7d269ee6c01787cc}{Laube}{L\bibinitperiod}{Annett}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=3ec087755a50281366f6da69d392258f}{Ribiere}{R\bibinitperiod}{Vincent}{V\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=938ea075c7d4f0fe21ce3b4c6a218702}{Sorniotti}{S\bibinitperiod}{Alessandro}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bb60283f458435db7d2ea1311c7fa895}{Trefois}{T\bibinitperiod}{Christophe}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=08f680b7fd44d222cce72c125e6975e9}{Valente}{V\bibinitperiod}{Marco}{M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=cb88bc717cc8b9ea181cb6f0c60e713e}{Wetterwald}{W\bibinitperiod}{Patrick}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{7}{}{%
+        {{uniquename=0,hash=3a27c0c2ed6aec973187cc2cf971ede4}{Gomez}{G\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=20f7f6b85a96d11c7d269ee6c01787cc}{Laube}{L\bibinitperiod}{Annett}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=3ec087755a50281366f6da69d392258f}{Ribiere}{R\bibinitperiod}{Vincent}{V\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=938ea075c7d4f0fe21ce3b4c6a218702}{Sorniotti}{S\bibinitperiod}{Alessandro}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bb60283f458435db7d2ea1311c7fa895}{Trefois}{T\bibinitperiod}{Christophe}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=08f680b7fd44d222cce72c125e6975e9}{Valente}{V\bibinitperiod}{Marco}{M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=cb88bc717cc8b9ea181cb6f0c60e713e}{Wetterwald}{W\bibinitperiod}{Patrick}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {ICST}%
+      }
+      \list{publisher}{2}{%
+        {ICST (Institute for Computer Sciences, Social-Informatics}%
+        {Telecommunications Engineering)}%
+      }
+      \strng{namehash}{136a42b36dd175d8083c4207b072bc2d}
+      \strng{fullhash}{bd450f0c045fa34194d1a5d602930d82}
+      \field{sortinit}{2}
+      \field{labelyear}{2008}
+      \field{datelabelsource}{}
+      \field{labeltitle}{{Encryption-based access control for building management}}
+      \field{booktitle}{Proc. 5th Annu. Int. Conf. Mob. Ubiquitous Syst. Comput. Networking, Serv.}
+      \field{isbn}{978-963-9799-27-1}
+      \field{series}{Mobiquitous '08}
+      \field{title}{{Encryption-based access control for building management}}
+      \field{year}{2008}
+      \field{pages}{27:1\bibrangedash 27:2}
+      \verb{doi}
+      \verb 10.4108/ICST.MOBIQUITOUS2008.4019
+      \endverb
+      \verb{file}
+      \verb :D$\backslash$:/Documents/Mendeley Desktop/Gomez et al/Proceedings of the 5th Annual International Conference on Mobile and Ubiquitous Systems Computing, Networking, and Services/Gomez et al. - 2008 - Encryption-based access control for building management.pdf:pdf
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.4108/ICST.MOBIQUITOUS2008.4019
+      \endverb
+    \endentry
+    \entry{Rumley2007}{inproceedings}{}
+      \name{labelname}{3}{}{%
+        {{uniquename=0,hash=d3eebaefcac50b5d6c88991e73aa404c}{Rumley}{R\bibinitperiod}{Sébastien}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=47dbbca4ce1b9e80e6a8be46b3e53a9a}{Gaumier}{G\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bb60283f458435db7d2ea1311c7fa895}{Trefois}{T\bibinitperiod}{Christophe}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=d3eebaefcac50b5d6c88991e73aa404c}{Rumley}{R\bibinitperiod}{Sébastien}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=47dbbca4ce1b9e80e6a8be46b3e53a9a}{Gaumier}{G\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bb60283f458435db7d2ea1311c7fa895}{Trefois}{T\bibinitperiod}{Christophe}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Ljubljana}%
+      }
+      \strng{namehash}{f29f8a318f52ca64db19f10c385d8491}
+      \strng{fullhash}{f29f8a318f52ca64db19f10c385d8491}
+      \field{sortinit}{2}
+      \field{labelyear}{2007}
+      \field{datelabelsource}{}
+      \field{labeltitle}{{Distributed and Component Oriented Tools for Communication Networks Using Web Services}}
+      \field{abstract}{Modern communication networks are reaching a high level of complexity. As their global dimensioning and performance evaluation are very hard tasks, a multi-layer approach is generally applied to divide them in smaller problems easier to tackle. Within this approach, tools only address one or two network layers. To perform an enhanced analysis encompassing more layers, several tools, not necessarily available in the same place when the problem arises, are often required. This paper shows how to allow a remote access to various existing tools using Web Services paradigm. In this way, software components modelling network elements, layers, or computing specific functions are turned into Web Services, which are available to remote users over the internet. Accessed through a simplified interface, they can be used sequentially or in parallel to solve a specific task. This dispenses the user to perform a local implementation, allows better code reuse, and offers an easy way to confront results from distinct models. A tool accessed via a web service can be beneficial for either research or educational purposes. Moreover, making tools available on the web increases credibility and visibility of their authors. Calls to Web Service require transmitting and retrieving all input and output data in a specific format. In our approach, the Multilayer Network Description (MND) format is used to describe both input data and computed results. It offers common basic structure while guaranteeing a large extensibility, and thus eases the interactions between related but different tools. The viability of this approach in the context of network planning is illustrated through two examples.}
+      \field{booktitle}{Proc. 6th EUROSIM Congr. Model. Simul.}
+      \field{title}{{Distributed and Component Oriented Tools for Communication Networks Using Web Services}}
+      \field{volume}{1}
+      \field{year}{2007}
+      \verb{file}
+      \verb :C$\backslash$:/Users/Treftower/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Rumley, Gaumier, Trefois - 2007 - Distributed and Component Oriented Tools for Communication Networks Using Web Services.pdf:pdf
+      \endverb
+      \verb{url}
+      \verb http://infoscience.epfl.ch/record/149191/files/EUROSIM%5C_rumley.pdf
+      \endverb
+      \keyw{collaborative work,communication networks,component oriented design,degree in telecommunications,network planning,presenting author,s,s biography,sébastien rumley received m,web service}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

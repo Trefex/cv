@@ -1,4 +1,6 @@
 # Latex files
+
+out/
  
 *.aux
 *.glo
@@ -28,6 +30,8 @@
 *.out
 *.synctex.gz
 *.pdf
+*.fls
+*.fdb*
  
 # Mac IDE files
 *.swp

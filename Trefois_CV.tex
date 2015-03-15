@@ -1,20 +1,59 @@
 \documentclass[11pt,a4paper,nolmodern]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
-\usepackage[firstyear=1996,lastyear=2018]{moderntimeline}
-%\tlmaxdates{1999}{2012}
+\usepackage[firstyear=1995,lastyear=2018]{moderntimeline}
+\usepackage{xparse}
 \tlwidth{0.8ex}
+
+\makeatletter
+\pgfmathsetmacro\tl@textstartabove{\tl@width+1pt}
+\NewDocumentCommand\tldatelabelcventryn{O{center}O{color1}mmmmmmm}{%
+\pgfmathsetmacro\tl@endyear{\tl@lastyear}%
+\pgfmathsetmacro\tl@startfraction{(#3-\tl@firstyear)/(\tl@lastyear-\tl@firstyear)}%
+\pgfmathsetmacro\tl@endfraction{(\tl@endyear-\tl@firstyear)/(\tl@lastyear-\tl@firstyear)}%
+ \cventry{\tikz[baseline]{%
+     \useasboundingbox (0,-1.5ex) rectangle (\hintscolumnwidth,1ex);
+     \fill [\tl@runningcolor] (0,0)
+        rectangle (\hintscolumnwidth,\tl@runningwidth);
+     \fill [#2] (0,0)
+        ++(\tl@startfraction*\hintscolumnwidth,0pt)
+        node [tl@startyear,yshift=5pt,anchor=#1] {#4}
+        node {$\bullet$};
+   }
+}
+{#5}{#6}{#7}{#8}{#9}
+}
+
+
+\renewcommand{\tltextstart}[2][base west]{%
+   \tikzset{
+       tl@startyear/.style={
+           font=#2,
+           name=tl@startyear,
+           above=\tl@textstartabove+1pt,
+           inner xsep=0pt,
+           anchor=#1,
+       }
+   }
+}
+
+
+\makeatother
+
+%\tlmaxdates{1999}{2012}
+
 \usepackage{xpatch}
 %\usepackage[style=authoryear,sorting=ydnt,dashed=false]{biblatex}
-\usepackage[url=false,backend=biber,
+\usepackage[url=false,
 	style=authoryear,
-	doi=false,  
+	doi=false,
 	isbn=false,
-	backref=false, 
+	backref=false,
+	backend=biber,
 	%maxnames=1,
 	%minnames=1,
 	maxbibnames=6,
 	minbibnames=6,
-	%uniquename=false, 
+	%uniquename=false,
 	sorting=ydnt]{biblatex}
 
 %\renewbibmacro*{date}{}
@@ -38,7 +77,7 @@
       %\sloppy\clubpenalty4000\widowpenalty4000}
   %{\endlist}
   %{\item}
-	
+
 	%remove brackets from year
 \xpatchbibmacro{date+extrayear}{%
   \printtext[parens]}{\printtext}{}{}
@@ -53,7 +92,7 @@
 \tldatelabelcventry{
 	%\usebibmacro{bibindex}%
   %\usebibmacro{begentry}%
-	\thefield{year} % Year 
+	\thefield{year} % Year
 	}{
 	\thefield{year} % Label of year
 	}{
@@ -94,13 +133,13 @@
   \usebibmacro{finentry}
 	}%
   }
-	
-	
+
+
 	\DeclareBibliographyDriver{inproceedings}{%
 \tldatelabelcventry{
 	%\usebibmacro{bibindex}%
   %\usebibmacro{begentry}%
-	\thefield{year} % Year 
+	\thefield{year} % Year
 	}{
 	\thefield{year} % Label of year
 	}{
@@ -128,6 +167,52 @@
   \usebibmacro{byeditor+others}%
   \newunit
 	%\thefield{pages}%
+  \newunit\newblock
+  \iftoggle{bbx:isbn}
+    {\printfield{issn}}
+    {}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \newunit\newblock
+  \usebibmacro{related}%
+  \usebibmacro{finentry}}%
+  }
+
+  \DeclareBibliographyDriver{incollection}{%
+\tldatelabelcventry{
+  %\usebibmacro{bibindex}%
+  %\usebibmacro{begentry}%
+  \thefield{year} % Year
+  }{
+  \thefield{year} % Label of year
+  }{
+  %\usebibmacro{bibindex}%
+  %\usebibmacro{begentry}%
+  \usebibmacro{author/translator+others}}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  %\usebibmacro{author/translator+others}
+  %
+  \setunit{\labelnamepunct}\newblock
+  \usebibmacro{title}%
+  \newunit
+  \printlist{language}%
+  \newunit\newblock
+  \usebibmacro{byauthor}%
+  \newunit\newblock
+  \usebibmacro{bytranslator+others}%
+  \newunit\newblock
+  \printfield{version}%
+  \newunit\newblock
+  \usebibmacro{in:}%
+  \usebibmacro{booktitle}%
+  \printlist{publisher}
+  \newunit
+  \usebibmacro{byeditor+others}%
+  \newunit
+  %\thefield{pages}%
   \newunit\newblock
   \iftoggle{bbx:isbn}
     {\printfield{issn}}
@@ -198,7 +283,7 @@
 
 % personal data
 \name{Christophe}{Trefois}
-\title{Ing. sys. com. dipl. EPF}                               % optional, remove / comment the line if not wanted
+\title{PhD, Dipl.-Ing}                               % optional, remove / comment the line if not wanted
 \address{38, rue de Kleinbettingen}{L-8436 Steinfort}{}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
 \phone[mobile]{+352~661~777~175}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
 %\phone[fixed]{+2~(345)~678~901}
@@ -209,8 +294,10 @@
 %\social[twitter]{Trefex}                             % optional, remove / comment the line if not wanted
 \social[github]{Trefex}                              % optional, remove / comment the line if not wanted
 %\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
-\photo[68pt][0.4pt]{cv_cts_cropped.png}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
-%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+\photo[78pt][0.4pt]{img/cv_cts_cropped.png}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+\extrainfo{Date of birth: May 1, 1984}
+
+\quote{Looking for a challenging position at the bridge between Systems Biology and Computer Science}                                 % optional, remove / comment the line if not wanted
 
 % to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
 %\makeatletter
@@ -235,8 +322,8 @@
     %.%
     \ifx#6\else{\newline{}\begin{minipage}[t]{\linewidth}\small#6\end{minipage}}\fi
     }}%
-		
-		
+
+\usepackage{hyperref}
 
 \addbibresource{publications.bib}
 
@@ -249,81 +336,200 @@
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
 
+%% -----------------------
+%% Education
+%% -----------------------
+
 \section{Education}
-\tlcventry{2010}{0}{PhD candidate in Systems Biomedicine}{Luxembourg Centre for Systems Biomedicine (LCSB) - University of Luxembourg}{Luxembourg}{}{} %{Description}  % arguments 3 to 6 can be left empty
-\tllabelcventry{2006}{2008}{2006--2008}{Master of Science in Communication Systems}{Ecole Polytechnique Fédérale de Lausanne (EPFL)}{Lausanne}{$5.32/6$}{} %{Description}  % arguments 3 to 6 can be left empty
-\tllabelcventry{2003}{2006}{2003--2006}{Bachelor of Science in Communication Systems}{Ecole Polytechnique Fédérale de Lausanne (EPFL)}{Lausanne}{}{}
+
+\tllabelcventry{2010}{2014}{2010--2014}{PhD in Systems Biomedicine}{Luxembourg Centre for Systems Biomedicine (LCSB) -- University of Luxembourg}{Luxembourg}{\textit{very good}}{Advisor: Prof Dr Rudi Balling}
+
+\tllabelcventry{2006}{2008}{2006--2008}{Master of Science in Communication Systems}{Ecole Polytechnique Fédérale de Lausanne (EPFL)}{Lausanne}{$5.32/6$}{Advisor: Prof Dr Jean-Pierre Hubaux} %{Description}  % arguments 3 to 6 can be left empty
+
+\tllabelcventry{2003}{2006}{2003--2006}{Bachelor of Science in Communication Systems}{Ecole Polytechnique Fédérale de Lausanne (EPFL)}{Lausanne}{}{Advisor: Prof Dr Patrick Thiran}
+
 \tllabelcventry{1996}{2003}{1996--2003}{Baccalauréat scientifique (Section B)}{Lycée Athénée de Luxembourg}{Luxembourg}{\textit{cum laude}}{}
 
+%% ------------------------
+%% PhD Section
+%% ------------------------
+
+\section{PhD dissertation}
+\cvitem{title}{\emph{Detection and characterization of critical transitions in mitochondrial activity via high content screening}}
+\cvitem{supervisors}{Prof Dr Rudi Balling and Dr Paul Antony}
+\cvitem{description}{Critical transitions exist in many dynamical systems, ranging from the Earth's climate system to microcosm populations. During a critical transition, the state of a dynamical system abruptly changes from one stable state to another, typically without obvious prior warning. In this thesis, we set out to study critical transitions in a simple cellular model using mitochondrial membrane potential as readout. To identify critical transitions, we established a modular high-content screening platform allowing systematic perturbation of oxidative phosphorylation. We showed that critical transitions are an intrinsic property of cellular systems and that two-component Gaussian mixture models adequately describe critical transitions dynamics.}
+\cvitem{url}{\url{http://orbilu.uni.lu/handle/10993/17706}}
+
+%% ------------------------
+%% Master Section
+%% ------------------------
+
 \section{Master thesis}
-\cvitem{title}{\emph{Title}}
-\cvitem{supervisors}{Supervisors}
-\cvitem{description}{Short thesis abstract}
+\cvitem{title}{\emph{Secure integration of wireless sensor networks into application}}
+\cvitem{supervisors}{Prof Dr Jean-Pierre Hubaux and Laurent Gomez}
+\cvitem{description}{Performed a risk analysis on integrating wireless sensor networks with business applications using NIST SP 800-30. We analyzed a security scheme which does not rely on complex operations guaranteeing end-to-end confidentiality of sensor data and provided both an in silico software demonstration and a hardware validation using physical components.}
+\cvitem{url}{\url{http://infoscience.epfl.ch/record/161912}}
+
+%% ------------------------
+%% Experience
+%% ------------------------
 
 \section{Experience}
 \subsection{Vocational}
-\cventry{year--year}{Job title}{Employer}{City}{}{General description no longer than 1--2 lines.\newline{}%
-Detailed achievements:%
-\begin{itemize}%
-\item Achievement 1;
-\item Achievement 2, with sub-achievements:
-  \begin{itemize}%
-  \item Sub-achievement (a);
-  \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
-    \begin{itemize}
-    \item Sub-sub-achievement i;
-    \item Sub-sub-achievement ii;
-    \item Sub-sub-achievement iii;
-    \end{itemize}
-  \item Sub-achievement (c);
-  \end{itemize}
-\item Achievement 3.
+
+%% Postdoc
+
+\tllabelcventry{2014}{0}{2014}{Postdoctoral researcher}{University of Luxembourg (LCSB)}{Luxembourg}{}
+{Leading a change management initiative around reproducible science for the institute (\textasciitilde 200 people) and pursuing research on critical transitions in systems in the bioinformatics core group led by Dr Reinhard Schneider. \newline{} Main activities include:
+\begin{itemize}
+	\item Setting up core virtualization platform for the LCSB;
+	\begin{itemize}
+		\item Technologies: Puppet, Foreman, Free-IPA, Icinga 2, Xen.
+	\end{itemize}
+	\item Creating data infrastructures for various data types of research labs;
+	\item Contribute to setting up best practises and training to researchers;
+	\item Establish policies on data management.
 \end{itemize}}
-\tllabelcventry{2008}{2010}{2008--2010}{Senior IT Auditor and Consultant}{Ernst \& Young}{Luxembourg}{}
-	{Description 1\newline{} Description line 2}
+
+%% PhD
+
+\tllabelcventry{2010}{2014}{2010--2014}{PhD candidate}{University of Luxembourg (LCSB)}{Luxembourg}{}
+{Obtained PhD and contributed to building up a new institute in the experimental neurobiology group led by Prof Dr Rudi Balling. \newline{} Contributions to the institute included:
+\begin{itemize}%
+	\item Established an automated high content screening platform;
+	\item Set up a microscopic imaging database (OMERO);
+	\item Set up a laboratory information management system (LIMS) for tracking samples.
+\end{itemize}}
+
+%% Ernst & Young
+
+\tllabelcventry{2008}{2010}{2008--2010}{Senior IT auditor and consultant}{Ernst \& Young}{Luxembourg}{}
+{Worked in the IT risk \& and assurance team for various national and international clients. \newline{} Activities included:
+\begin{itemize}
+	\item IT effectiveness, cost optimisation and service management
+	\item Risk assessment and modeling
+	\item Business process improvement
+	\item IT general controls, operations and infrastructure diagnostics
+	\item Change management audits, logical and physical access control security audits
+\end{itemize}}
+
+%% SAP
+
+\tldatelabelcventryn[center]{2008}{Feb.--Aug. 2008}{Research assistant}{SAP Labs France}{Sophia Antipolis, France}{}
+{Research assistant in the security and trust department of SAP Labs France. This work resulted in my Master thesis.}
+
+\tldatelabelcventryn{2007}{Aug. 2007}{Software developer}{Ecole Polytechnique Fédérale de Lausanne}{Switzerland}{}
+{Development of a template based website using groovy, ajax, Java and HTML/CSS.}{}
+
+\tldatelabelcventryn[west]{2002}{Summer 2002}{Web developer}{Web Technologies}{Luxembourg}{}
+{Development of a PHP based holiday planner for employees.}
+
+\tldatelabelcventryn[west]{2001}{Summer 2001}{Web developer}{Web Technologies}{Luxembourg}{}
+{Development of an eCommerce platform.}
+
+
+% \cventry{year--year}{Job title}{Employer}{City}{}{General description no longer than 1--2 lines.\newline{}%
+% Detailed achievements:%
+% \begin{itemize}%
+% \item Achievement 1;
+% \item Achievement 2, with sub-achievements:
+%   \begin{itemize}%
+%   \item Sub-achievement (a);
+%   \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
+%     \begin{itemize}
+%     \item Sub-sub-achievement i;
+%     \item Sub-sub-achievement ii;
+%     \item Sub-sub-achievement iii;
+%     \end{itemize}
+%   \item Sub-achievement (c);
+%   \end{itemize}
+% \item Achievement 3.
+% \end{itemize}}
+
 %\subsection{Miscellaneous}
 \subsection{Teaching}
-\tldatelabelcventry{2007}{Mar.--Jul. 2007}{Teaching assistant}{EPFL}{Switzerland}{}
-		{Information and technology project course -- Bachelor in communication systems. Helping students on their assignments and supervising groups of 2 students for their java programming project.}
-	\tllabelcventry{2006}{2007}{2006--2007}{Teaching assistant}{EPFL}{Switzerland}{}
-		{Computer networking course -- Bachelor in communication systems. Helping students on their assignments and projects and overseeing exams.}
-	\tldatelabelcventry{2006}{Mar.-Jul. 2006}{Teaching assistant}{EPFL}{Switzerland}{}
-		{Java object oriented programming course -- Bachelor in communication systems. Helping students on their assignments and projects and overseeing and correcting exams.}
-%\cventry{Jul. 1999--Aug. 1999}{Job title}{Employer}{City}{}{Description}
-\tldatelabelcventry{2000}{Jul.-Aug. 2000}{Fund support}{State Street Bank}{Luxembourg}{}{Distribution of mail, sorting of print outs from various funds}{}
-\tldatelabelcventry{1999}{Jul.-Aug. 1999}{Fund support}{State Street Bank}{Luxembourg}{}{Distribution of mail, sorting of print outs from various funds}{}
+
+\tldatelabelcventryn[center]{2007}{Mar.--Jul. 2007}{Teaching assistant}{Ecole Polytechnique Fédérale de Lausanne}{Switzerland}{}
+{Information and technology project course -- Bachelor in communication systems. Helping students on their assignments and supervising groups of 2 students for their java programming project.}
+
+\tllabelcventry{2006}{2007}{2006--2007}{Teaching assistant}{Ecole Polytechnique Fédérale de Lausanne}{Switzerland}{}
+{Computer networking course -- Bachelor in communication systems. Helping students on their assignments and projects and overseeing exams.}
+
+\tldatelabelcventryn[center]{2006}{Mar.-Jul. 2006}{Teaching assistant}{Ecole Polytechnique Fédérale de Lausanne}{Switzerland}{}
+{Java object oriented programming course -- Bachelor in communication systems. Helping students on their assignments and projects and overseeing and correcting exams.}{}
+
+\tldatelabelcventryn[west]{2000}{Jul.-Aug. 2000}{Fund support}{State Street Bank}{Luxembourg}{}
+{Distribution of mail, sorting of print outs from various funds}
+
+\tldatelabelcventryn[west]{1999}{Jul.-Aug. 1999}{Fund support}{State Street Bank}{Luxembourg}{}
+{Distribution of mail, sorting of print outs from various funds}
+
+%% -------------------
+%% Languages
+%% -------------------
 
 \section{Languages}
-\cvitemwithcomment{Language 1}{Skill level}{Comment}
-\cvitemwithcomment{Language 2}{Skill level}{Comment}
-\cvitemwithcomment{Language 3}{Skill level}{Comment}
+\cvitemwithcomment{Luxembourgish}{Native}{}
+\cvitemwithcomment{English}{Proficient}{}
+\cvitemwithcomment{French}{Proficient}{}
+\cvitemwithcomment{German}{Proficient}{}
+
+% \cvdoubleitem{System administration}{Puppet, Foreman, FreeIPA, Icinga 2}{category 4}{XXX, YYY, ZZZ}
+% \cvdoubleitem{Platforms}{Gitlab, xWiki, Docker, OMERO, ownCloud}{category 5}{XXX, YYY, ZZZ}
+% \cvdoubleitem{Tools \& OS}{\LaTeX, OFfice, Windows, Ubuntu, CentOS}{category 6}{XXX, YYY, ZZZ}
+
+%% -------------------
+%% Skills
+%% -------------------
 
 \section{Computer skills}
-\cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
-\cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
-\cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
 
-\section{Interests}
-\cvitem{hobby 1}{Description}
-\cvitem{hobby 2}{Description}
-\cvitem{hobby 3}{Description}
+\cvitem{Languages}{Java, Python, C++, C\#, Ruby, YAML, PHP, HTML/CSS, VHDL}
+\cvitem{Databases}{MySQL, PostgreSQL, MaxDB}
+\cvitem{Web}{PHP, JSON, HAML, XML, Twitter Bootstrap, WebSockets}
+\cvitem{System administration}{Puppet, Foreman, FreeIPA, Icinga 2, Xen, Vagrant, Bash}
+\cvitem{Platforms}{Gitlab, Docker, OMERO, ownCloud, Joomla CMS}
+\cvitem{Tools \& OS}{\LaTeX, Git, SVN, Vim, Eclipse, Visual Studio, R, (Libre--/Microsoft) Office, Windows, Linux (Ubuntu, CentOS), OS X}
 
-\section{Extra 1}
-\cvlistitem{Item 1}
-\cvlistitem{Item 2}
-\cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
+\section{Activities}
 
-\section{Extra 2}
-\cvlistdoubleitem{Item 1}{Item 4}
-\cvlistdoubleitem{Item 2}{Item 5}
-\cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
+\tllabelcventry{2014}{0}{2014}{Vice-President}{LuxDoc}{Luxembourg}{}
+{Vice-President of the Luxembourg young researchers association. \url{www.luxdoc.org}}
 
-\section{References}
-\begin{cvcolumns}
-  \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
-  \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
-  \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
-\end{cvcolumns}
+\tltextstart[base]{\scriptsize}
+%\tltextend[north west]{\scriptsize}
+\tllabelcventry{2012}{2014}{2012--2014}{President}{LuxDoc}{Luxembourg}{}
+{President of the Luxembourg young researchers association. \url{www.luxdoc.org}}
+
+
+
+\tltextstart[base west]{\scriptsize}
+%\tltextend[north]{\scriptsize}
+
+\tllabelcventry{1995}{2003}{1995--2003}{Percussionist}{Just Music Bartreng}{Luxembourg}{}
+{Founding member of the music group and played various percussion instruments in a group of 5-8 people. Obtained the Bronze medal for services rendered to the Luxembourgish cultural life. \url{www.justmusic.lu}}
+
+% \section{Interests}
+% \cvitem{hobby 1}{Description}
+% \cvitem{hobby 2}{Description}
+% \cvitem{hobby 3}{Description}
+%
+% \section{Extra 1}
+% \cvlistitem{Item 1}
+% \cvlistitem{Item 2}
+% \cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
+%
+% \section{Extra 2}
+% \cvlistdoubleitem{Item 1}{Item 4}
+% \cvlistdoubleitem{Item 2}{Item 5}
+% \cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
+%
+% \section{References}
+% \begin{cvcolumns}
+%   \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
+%   \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
+%   \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
+% \end{cvcolumns}
 
 % Publications from a BibTeX file without multibib
 %  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
@@ -341,30 +547,27 @@ Detailed achievements:%
 %\bibliographystylemisc{plain}
 %\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
 
-\clearpage
-%-----       letter       ---------------------------------------------------------
-% recipient data
-\recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
-\date{January 01, 1984}
-\opening{Dear Sir or Madam,}
-\closing{Yours faithfully,}
-\enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
-\makelettertitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LETTER
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
-
-Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
-
-Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
-
-Albert Einstein discovered that $e=mc^2$ in 1905.
-
-\[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
+% \clearpage
+% \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+% \date{January 01, 1984}
+% \opening{Dear Sir or Madam,}
+% \closing{Yours faithfully,}
+% \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+% \makelettertitle
+%
+% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+%
+% Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
+%
+% Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+%
+% Albert Einstein discovered that $e=mc^2$ in 1905.
+%
+% \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
 
 \makeletterclosing
-
-%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
-\end{document}
-
-
-%% end of file `template.tex'.
+\end{document}.

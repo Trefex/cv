@@ -4,6 +4,8 @@
 \usepackage{xparse}
 \tlwidth{0.8ex}
 
+%% Command allows to use center, west and east to position the labels
+
 \makeatletter
 \pgfmathsetmacro\tl@textstartabove{\tl@width+1pt}
 \NewDocumentCommand\tldatelabelcventryn{O{center}O{color1}mmmmmmm}{%
@@ -24,6 +26,8 @@
 }
 
 
+%% Redefined to change vertical distance to label slightly
+
 \renewcommand{\tltextstart}[2][base west]{%
    \tikzset{
        tl@startyear/.style={
@@ -42,7 +46,7 @@
 %\tlmaxdates{1999}{2012}
 
 \usepackage{xpatch}
-%\usepackage[style=authoryear,sorting=ydnt,dashed=false]{biblatex}
+
 \usepackage[url=false,
 	style=authoryear,
 	doi=false,
@@ -56,28 +60,6 @@
 	%uniquename=false,
 	sorting=ydnt]{biblatex}
 
-%\renewbibmacro*{date}{}
-%\renewbibmacro*{date+extrayear}{}
-%\renewbibmacro*{issue+date}{}
-%\newcommand*{\bibyear}{}
-%
-%\defbibenvironment{bibliography}
-  %{\list
-     %{\iffieldequals{year}{\bibyear}
-        %{}
-        %{\tldatelabelcventry{\printfield{year}}{Jul.-Aug. 2000}{}{}{}{}{}%
-         %%\savefield{year}{\bibyear}
-				%}}
-     %{\setlength{\topsep}{0pt}% layout parameters based on moderncvstyleclassic.sty
-      %\setlength{\labelwidth}{\hintscolumnwidth}%
-      %\setlength{\labelsep}{\separatorcolumnwidth}%
-      %\setlength{\itemsep}{\bibitemsep}%
-      %\leftmargin\labelwidth%
-      %\advance\leftmargin\labelsep}%
-      %\sloppy\clubpenalty4000\widowpenalty4000}
-  %{\endlist}
-  %{\item}
-
 	%remove brackets from year
 \xpatchbibmacro{date+extrayear}{%
   \printtext[parens]}{\printtext}{}{}
@@ -90,8 +72,6 @@
 %change order and wrap into \cvline
 \DeclareBibliographyDriver{article}{%
 \tldatelabelcventry{
-	%\usebibmacro{bibindex}%
-  %\usebibmacro{begentry}%
 	\thefield{year} % Year
 	}{
 	\thefield{year} % Label of year
@@ -101,8 +81,6 @@
   \usebibmacro{author/translator+others}}{}{%
 	\usebibmacro{bibindex}%
   \usebibmacro{begentry}%
-  %\usebibmacro{author/translator+others}
-  %
   \setunit{\labelnamepunct}\newblock
   \usebibmacro{title}%
   \newunit
@@ -136,20 +114,14 @@
 
 
 	\DeclareBibliographyDriver{inproceedings}{%
-\tldatelabelcventry{
-	%\usebibmacro{bibindex}%
-  %\usebibmacro{begentry}%
+  \tldatelabelcventry{
 	\thefield{year} % Year
 	}{
 	\thefield{year} % Label of year
 	}{
-	%\usebibmacro{bibindex}%
-  %\usebibmacro{begentry}%
-  \usebibmacro{author/translator+others}}{%
+	\usebibmacro{author/translator+others}}{%
 	\usebibmacro{bibindex}%
   \usebibmacro{begentry}%
-  %\usebibmacro{author/translator+others}
-  %
   \setunit{\labelnamepunct}\newblock
   \usebibmacro{title}%
   \newunit
@@ -166,8 +138,7 @@
   \newunit
   \usebibmacro{byeditor+others}%
   \newunit
-	%\thefield{pages}%
-  \newunit\newblock
+	\newunit\newblock
   \iftoggle{bbx:isbn}
     {\printfield{issn}}
     {}%
@@ -181,20 +152,14 @@
   }
 
   \DeclareBibliographyDriver{incollection}{%
-\tldatelabelcventry{
-  %\usebibmacro{bibindex}%
-  %\usebibmacro{begentry}%
+  \tldatelabelcventry{
   \thefield{year} % Year
   }{
   \thefield{year} % Label of year
   }{
-  %\usebibmacro{bibindex}%
-  %\usebibmacro{begentry}%
   \usebibmacro{author/translator+others}}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
-  %\usebibmacro{author/translator+others}
-  %
   \setunit{\labelnamepunct}\newblock
   \usebibmacro{title}%
   \newunit
@@ -212,7 +177,6 @@
   \newunit
   \usebibmacro{byeditor+others}%
   \newunit
-  %\thefield{pages}%
   \newunit\newblock
   \iftoggle{bbx:isbn}
     {\printfield{issn}}
@@ -225,43 +189,6 @@
   \usebibmacro{related}%
   \usebibmacro{finentry}}%
   }
-	%\DeclareBibliographyDriver{inproceedings}{%
-%\tldatelabelcventry{\usebibmacro{date+extrayear}}{label}{}{%
-  %\usebibmacro{bibindex}%
-  %\usebibmacro{begentry}%
-  %\usebibmacro{author/translator+others}%
-  %\setunit{\labelnamepunct}\newblock
-  %\usebibmacro{title}%
-  %\newunit
-  %\printlist{language}%
-  %\newunit\newblock
-  %\usebibmacro{byauthor}%
-  %\newunit\newblock
-  %\usebibmacro{bytranslator+others}%
-  %\newunit\newblock
-  %\printfield{version}%
-  %\newunit\newblock
-  %\usebibmacro{in:}%
-  %\usebibmacro{journal+issuetitle}%
-  %\newunit
-  %\usebibmacro{byeditor+others}%
-  %\newunit
-  %\usebibmacro{note+pages}%
-  %\newunit\newblock
-  %\iftoggle{bbx:isbn}
-    %{\printfield{issn}}
-    %{}%
-  %\newunit\newblock
-  %\usebibmacro{doi+eprint+url}%
-  %\newunit\newblock
-  %\usebibmacro{addendum+pubstate}%
-  %\setunit{\bibpagerefpunct}\newblock
-  %\usebibmacro{pageref}%
-  %\newunit\newblock
-  %\usebibmacro{related}%
-  %\usebibmacro{finentry}}%
-  %}
-
 
 \defbibheading{bibliography}[Publications]{\section{#1}}
 
@@ -274,40 +201,28 @@
 
 % character encoding
 \usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
-%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
 
 % adjust the page margins
 \usepackage[scale=0.8]{geometry}
 \setlength{\hintscolumnwidth}{3.5cm}                % if you want to change the width of the column with the dates
-%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
 % personal data
 \name{Christophe}{Trefois}
 \title{PhD, Dipl.-Ing}                               % optional, remove / comment the line if not wanted
-\address{38, rue de Kleinbettingen}{L-8436 Steinfort}{}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\address{38, rue de Kleinbettingen}{L-8436 Steinfort}{}
 \phone[mobile]{+352~661~777~175}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
 %\phone[fixed]{+2~(345)~678~901}
 %\phone[fax]{+3~(456)~789~012}
-\email{christophe@trefois.com}                               % optional, remove / comment the line if not wanted
-\homepage{www.trefois.com}                         % optional, remove / comment the line if not wanted
-\social[linkedin]{trefoischristophe}                        % optional, remove / comment the line if not wanted
-%\social[twitter]{Trefex}                             % optional, remove / comment the line if not wanted
-\social[github]{Trefex}                              % optional, remove / comment the line if not wanted
-%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
-\photo[78pt][0.4pt]{img/cv_cts_cropped.png}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+\email{christophe@trefois.com}
+\homepage{www.trefois.com}
+\social[linkedin]{trefoischristophe}
+%\social[twitter]{Trefex}
+\social[github]{Trefex}
+%\extrainfo{additional information}
+\photo[78pt][0.4pt]{img/cv_cts_cropped.png}  %  '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 \extrainfo{Date of birth: May 1, 1984}
 
-\quote{Looking for a challenging position at the bridge between Systems Biology and Computer Science}                                 % optional, remove / comment the line if not wanted
-
-% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
-%\makeatletter
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-%\makeatother
-%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
-
-% bibliography with mutiple entries
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
+\quote{Looking for a challenging position at the bridge between Systems Biology and Computer Science}
 
 \usepackage[originalcommands]{ragged2e}
 \renewcommand*{\cvcomputer}[4]{%
@@ -327,13 +242,11 @@
 
 \addbibresource{publications.bib}
 
-%\xpatchcmd\cventry{.\strut}{\strut}{}{}
-%----------------------------------------------------------------------------------
-%            content
-%----------------------------------------------------------------------------------
+%% -----------------------
+%% Content
+%% -----------------------
+
 \begin{document}
-%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
-%-----       resume       ---------------------------------------------------------
 \makecvtitle
 
 %% -----------------------
@@ -427,26 +340,6 @@
 \tldatelabelcventryn[west]{2001}{Summer 2001}{Web developer}{Web Technologies}{Luxembourg}{}
 {Development of an eCommerce platform.}
 
-
-% \cventry{year--year}{Job title}{Employer}{City}{}{General description no longer than 1--2 lines.\newline{}%
-% Detailed achievements:%
-% \begin{itemize}%
-% \item Achievement 1;
-% \item Achievement 2, with sub-achievements:
-%   \begin{itemize}%
-%   \item Sub-achievement (a);
-%   \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
-%     \begin{itemize}
-%     \item Sub-sub-achievement i;
-%     \item Sub-sub-achievement ii;
-%     \item Sub-sub-achievement iii;
-%     \end{itemize}
-%   \item Sub-achievement (c);
-%   \end{itemize}
-% \item Achievement 3.
-% \end{itemize}}
-
-%\subsection{Miscellaneous}
 \subsection{Teaching}
 
 \tldatelabelcventryn[center]{2007}{Mar.--Jul. 2007}{Teaching assistant}{Ecole Polytechnique Fédérale de Lausanne}{Switzerland}{}
@@ -474,10 +367,6 @@
 \cvitemwithcomment{French}{Proficient}{}
 \cvitemwithcomment{German}{Proficient}{}
 
-% \cvdoubleitem{System administration}{Puppet, Foreman, FreeIPA, Icinga 2}{category 4}{XXX, YYY, ZZZ}
-% \cvdoubleitem{Platforms}{Gitlab, xWiki, Docker, OMERO, ownCloud}{category 5}{XXX, YYY, ZZZ}
-% \cvdoubleitem{Tools \& OS}{\LaTeX, OFfice, Windows, Ubuntu, CentOS}{category 6}{XXX, YYY, ZZZ}
-
 %% -------------------
 %% Skills
 %% -------------------
@@ -497,55 +386,15 @@
 {Vice-President of the Luxembourg young researchers association. \url{www.luxdoc.org}}
 
 \tltextstart[base]{\scriptsize}
-%\tltextend[north west]{\scriptsize}
 \tllabelcventry{2012}{2014}{2012--2014}{President}{LuxDoc}{Luxembourg}{}
 {President of the Luxembourg young researchers association. \url{www.luxdoc.org}}
-
-
-
 \tltextstart[base west]{\scriptsize}
-%\tltextend[north]{\scriptsize}
 
 \tllabelcventry{1995}{2003}{1995--2003}{Percussionist}{Just Music Bartreng}{Luxembourg}{}
 {Founding member of the music group and played various percussion instruments in a group of 5-8 people. Obtained the Bronze medal for services rendered to the Luxembourgish cultural life. \url{www.justmusic.lu}}
 
-% \section{Interests}
-% \cvitem{hobby 1}{Description}
-% \cvitem{hobby 2}{Description}
-% \cvitem{hobby 3}{Description}
-%
-% \section{Extra 1}
-% \cvlistitem{Item 1}
-% \cvlistitem{Item 2}
-% \cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
-%
-% \section{Extra 2}
-% \cvlistdoubleitem{Item 1}{Item 4}
-% \cvlistdoubleitem{Item 2}{Item 5}
-% \cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
-%
-% \section{References}
-% \begin{cvcolumns}
-%   \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
-%   \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
-%   \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
-% \end{cvcolumns}
-
-% Publications from a BibTeX file without multibib
-%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
-%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
 \nocite{*}
-%\bibliographystyle{plain}
-%\bibliography{publications}                        % 'publications' is the name of a BibTeX file
 \printbibliography[title={Publications}]
-% Publications from a BibTeX file using the multibib package
-%\section{Publications}
-%\nocitebook{book1,book2}
-%\bibliographystylebook{plain}
-%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
-%\nocitemisc{misc1,misc2,misc3}
-%\bibliographystylemisc{plain}
-%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %% LETTER

@@ -1,7 +1,7 @@
 # Latex files
 
 out/
- 
+
 *.aux
 *.glo
 *.idx
@@ -33,12 +33,12 @@ out/
 *.fls
 *.fdb*
 
-*.bcf 
+*.bcf
 *.run.xml
 
 # Mac IDE files
 *.swp
 *~
- 
+
 # Mac finder files and hidden folders
 .DS_Store

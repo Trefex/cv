@@ -32,7 +32,10 @@ out/
 *.pdf
 *.fls
 *.fdb*
- 
+
+*.bcf 
+*.run.xml
+
 # Mac IDE files
 *.swp
 *~

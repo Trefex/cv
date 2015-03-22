@@ -75,14 +75,15 @@
 	\thefield{year} % Year
 	}{
 	\thefield{year} % Label of year
-	}{
+	}{\mdseries
 	\usebibmacro{bibindex}%
   \usebibmacro{begentry}%
-  \usebibmacro{author/translator+others}}{}{%
+  \usebibmacro{author/translator+others}
+  }{}{%
 	\usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \setunit{\labelnamepunct}\newblock
-  \usebibmacro{title}%
+  \textit{\usebibmacro{title}}%
   \newunit
   \printlist{language}%
   \newunit\newblock
@@ -118,12 +119,12 @@
 	\thefield{year} % Year
 	}{
 	\thefield{year} % Label of year
-	}{
+	}{\mdseries
 	\usebibmacro{author/translator+others}}{%
 	\usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \setunit{\labelnamepunct}\newblock
-  \usebibmacro{title}%
+  \textit{\usebibmacro{title}}
   \newunit
   \printlist{language}%
   \newunit\newblock
@@ -156,12 +157,12 @@
   \thefield{year} % Year
   }{
   \thefield{year} % Label of year
-  }{
+  }{\mdseries
   \usebibmacro{author/translator+others}}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \setunit{\labelnamepunct}\newblock
-  \usebibmacro{title}%
+  \textit{\usebibmacro{title}}
   \newunit
   \printlist{language}%
   \newunit\newblock
@@ -192,6 +193,36 @@
 
 \defbibheading{bibliography}[Publications]{\section{#1}}
 
+% Sort all bib entries Last-First
+\DeclareNameAlias{sortname}{last-first}
+
+% Format only my author name specialy
+\newcommand{\myname}[1]{\textbf{Trefois, Christophe}}
+
+\usepackage{relsize}
+\usepackage{lipsum}
+
+%c from texinfo.tex
+\def\ifmonospace{\ifdim\fontdimen3\font=0pt }
+
+%c C plus plus
+\def\Cpp{%
+\ifmonospace%
+    C++%
+\else%
+    C\kern-.1667em\raise.30ex\hbox{\smaller{++}}%
+\fi%
+\spacefactor1000 }
+
+%c C sharp
+\def\Csharp{%
+\ifmonospace%
+    C\#%
+\else%
+    C\kern-.1667em\raise.30ex\hbox{\smaller{\#}}%
+\fi%
+\spacefactor1000 }
+
 % moderncv themes
 \moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
@@ -208,7 +239,7 @@
 
 % personal data
 \name{Christophe}{Trefois}
-\title{PhD, Dipl.-Ing}                               % optional, remove / comment the line if not wanted
+\title{PhD, Dipl.-Ing.}                               % optional, remove / comment the line if not wanted
 \address{38, rue de Kleinbettingen}{L-8436 Steinfort}{}
 \phone[mobile]{+352~661~777~175}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
 %\phone[fixed]{+2~(345)~678~901}
@@ -222,7 +253,7 @@
 \photo[78pt][0.4pt]{img/cv_cts_cropped.png}  %  '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 \extrainfo{Date of birth: May 1, 1984}
 
-\quote{Looking for a challenging position at the bridge between Systems Biology and Computer Science}
+\quote{Looking for a challenging position at the bridge between Systems Biomedicine and Computer Science}
 
 \usepackage[originalcommands]{ragged2e}
 \renewcommand*{\cvcomputer}[4]{%
@@ -257,7 +288,7 @@
 
 \tllabelcventry{2010}{2014}{2010--2014}{PhD in Systems Biomedicine}{Luxembourg Centre for Systems Biomedicine (LCSB) -- University of Luxembourg}{Luxembourg}{\textit{very good}}{Advisor: Prof Dr Rudi Balling}
 
-\tllabelcventry{2006}{2008}{2006--2008}{Master of Science in Communication Systems}{Ecole Polytechnique Fédérale de Lausanne (EPFL)}{Lausanne}{$5.32/6$}{Advisor: Prof Dr Jean-Pierre Hubaux} %{Description}  % arguments 3 to 6 can be left empty
+\tllabelcventry{2006}{2008}{2006--2008}{Master of Science in Communication Systems}{Ecole Polytechnique Fédérale de Lausanne (EPFL)}{Lausanne}{$5.32/6$}{Advisor: Prof Jean-Pierre Hubaux} %{Description}  % arguments 3 to 6 can be left empty
 
 \tllabelcventry{2003}{2006}{2003--2006}{Bachelor of Science in Communication Systems}{Ecole Polytechnique Fédérale de Lausanne (EPFL)}{Lausanne}{}{Advisor: Prof Dr Patrick Thiran}
 
@@ -279,7 +310,7 @@
 
 \section{Master thesis}
 \cvitem{title}{\emph{Secure integration of wireless sensor networks into application}}
-\cvitem{supervisors}{Prof Dr Jean-Pierre Hubaux and Laurent Gomez}
+\cvitem{supervisors}{Prof Jean-Pierre Hubaux and Laurent Gomez}
 \cvitem{description}{Performed a risk analysis on integrating wireless sensor networks with business applications using NIST SP 800-30. We analyzed a security scheme which does not rely on complex operations guaranteeing end-to-end confidentiality of sensor data and provided both an in silico software demonstration and a hardware validation using physical components.}
 \cvitem{url}{\url{http://infoscience.epfl.ch/record/161912}}
 
@@ -295,13 +326,16 @@
 \tllabelcventry{2014}{0}{2014}{Postdoctoral researcher}{University of Luxembourg (LCSB)}{Luxembourg}{}
 {Leading a change management initiative around reproducible science for the institute (\textasciitilde 200 people) and pursuing research on critical transitions in systems in the bioinformatics core group led by Dr Reinhard Schneider. \newline{} Main activities include:
 \begin{itemize}
-	\item Setting up core virtualization platform for the LCSB;
+	\item Setting up core virtualization platform for the LCSB for \textasciitilde 100 virtual machines;
 	\begin{itemize}
-		\item Technologies: Puppet, Foreman, Free-IPA, Icinga 2, Xen.
+		\item Technologies: Puppet, Foreman, freeIPA, Icinga 2, Xen.
 	\end{itemize}
 	\item Creating data infrastructures for various data types of research labs;
-	\item Contribute to setting up best practises and training to researchers;
-	\item Establish policies on data management.
+  \begin{itemize}
+		\item Standardizing storage of 300 TiB for microscopic images, spectograms, genomics and life science related experimental data.
+	\end{itemize}
+	\item Setting up research best practises and training for researchers in the form of workshops;
+	\item Establishing policies on data management.
 \end{itemize}}
 
 %% PhD
@@ -309,9 +343,9 @@
 \tllabelcventry{2010}{2014}{2010--2014}{PhD candidate}{University of Luxembourg (LCSB)}{Luxembourg}{}
 {Obtained PhD and contributed to building up a new institute in the experimental neurobiology group led by Prof Dr Rudi Balling. \newline{} Contributions to the institute included:
 \begin{itemize}%
-	\item Established an automated high content screening platform;
-	\item Set up a microscopic imaging database (OMERO);
-	\item Set up a laboratory information management system (LIMS) for tracking samples.
+	\item Establishing an automated high content screening platform;
+	\item Setting up a microscopic imaging database (OMERO);
+	\item Setting up a laboratory information management system (LIMS) for tracking samples.
 \end{itemize}}
 
 %% Ernst & Young
@@ -319,11 +353,11 @@
 \tllabelcventry{2008}{2010}{2008--2010}{Senior IT auditor and consultant}{Ernst \& Young}{Luxembourg}{}
 {Worked in the IT risk \& and assurance team for various national and international clients. \newline{} Activities included:
 \begin{itemize}
-	\item IT effectiveness, cost optimisation and service management
-	\item Risk assessment and modeling
-	\item Business process improvement
-	\item IT general controls, operations and infrastructure diagnostics
-	\item Change management audits, logical and physical access control security audits
+	\item IT effectiveness, cost optimisation and service management;
+	\item Risk assessment and modeling;
+	\item Business process improvement;
+	\item IT general controls, operations and infrastructure diagnostics;
+	\item Change management audits, logical and physical access control security audits.
 \end{itemize}}
 
 %% SAP
@@ -340,7 +374,22 @@
 \tldatelabelcventryn[west]{2001}{Summer 2001}{Web developer}{Web Technologies}{Luxembourg}{}
 {Development of an eCommerce platform.}
 
+%% -----------
+%% Teaching
+%% -----------
+
 \subsection{Teaching}
+
+\tllabelcventry{2015}{0}{2015}{Master thesis supervision}{University of Luxembourg (LCSB)}{Luxembourg}{}
+{Co-supervision of a master student for the image analysis and programming part of his work.
+}
+
+\tldatelabelcventryn[east]{2014}{Jan.--Sep. 2014}{Master thesis supervision}{University of Luxembourg (LCSB)}{Luxembourg}{}
+{Supervised a Master student for the computational and theoretical part of his work. }
+
+\tllabelcventry{2011}{0}{2010}{Mendeley advisor}{}{Luxembourg}{}
+{Organized and presented four workshops for librarians and students on the benefits of using a reference manager with the help of Mendeley.
+}
 
 \tldatelabelcventryn[center]{2007}{Mar.--Jul. 2007}{Teaching assistant}{Ecole Polytechnique Fédérale de Lausanne}{Switzerland}{}
 {Information and technology project course -- Bachelor in communication systems. Helping students on their assignments and supervising groups of 2 students for their java programming project.}
@@ -351,34 +400,31 @@
 \tldatelabelcventryn[center]{2006}{Mar.-Jul. 2006}{Teaching assistant}{Ecole Polytechnique Fédérale de Lausanne}{Switzerland}{}
 {Java object oriented programming course -- Bachelor in communication systems. Helping students on their assignments and projects and overseeing and correcting exams.}{}
 
-\tldatelabelcventryn[west]{2000}{Jul.-Aug. 2000}{Fund support}{State Street Bank}{Luxembourg}{}
-{Distribution of mail, sorting of print outs from various funds}
-
-\tldatelabelcventryn[west]{1999}{Jul.-Aug. 1999}{Fund support}{State Street Bank}{Luxembourg}{}
-{Distribution of mail, sorting of print outs from various funds}
+\tllabelcventry{1999}{2000}{1999--2000}{Fund support}{State Street Bank}{Luxembourg}{}
+{Distribution of mail, sorting of print outs from various funds during two summer internships.}
 
 %% -------------------
 %% Languages
 %% -------------------
 
 \section{Languages}
-\cvitemwithcomment{Luxembourgish}{Native}{}
-\cvitemwithcomment{English}{Proficient}{}
-\cvitemwithcomment{French}{Proficient}{}
-\cvitemwithcomment{German}{Proficient}{}
+\cvdoubleitem{Luxembourgish}{Native}  {French}{Proficient}
+\cvdoubleitem{English}{Proficient}    {German}{Proficient}
 
 %% -------------------
 %% Skills
 %% -------------------
 
-\section{Computer skills}
+\section{Skills}
 
-\cvitem{Languages}{Java, Python, C++, C\#, Ruby, YAML, PHP, HTML/CSS, VHDL}
-\cvitem{Databases}{MySQL, PostgreSQL, MaxDB}
-\cvitem{Web}{PHP, JSON, HAML, XML, Twitter Bootstrap, WebSockets}
-\cvitem{System administration}{Puppet, Foreman, FreeIPA, Icinga 2, Xen, Vagrant, Bash}
-\cvitem{Platforms}{Gitlab, Docker, OMERO, ownCloud, Joomla CMS}
-\cvitem{Tools \& OS}{\LaTeX, Git, SVN, Vim, Eclipse, Visual Studio, R, (Libre--/Microsoft) Office, Windows, Linux (Ubuntu, CentOS), OS X}
+\cvitem{Languages}    {Java, Python, \Cpp, \Csharp, Ruby, HTML/CSS}
+\cvitem{Databases}    {MySQL, MariaDB, PostgreSQL, MaxDB}
+\cvitem{Web}          {PHP, JSON, HAML, YAML, XML, Twitter Bootstrap, WebSockets}
+\cvitem{System administration}{Puppet, Hiera, Foreman, freeIPA, Icinga 2, Xen, Vagrant, Bash}
+\cvitem{Platforms}    {Gitlab, Docker, OMERO, ownCloud, Joomla CMS}
+\cvitem{Tools \& OS}  {\LaTeX, Git, SVN, Vim, Eclipse, Visual Studio, R, oarsub, (Libre/Microsoft) Office, Windows, Linux (Ubuntu, CentOS), OS X}
+\cvitem{Laboratory}   {Cell culture, confocal \& spinning disc microscopy, automatic liquid handling robotics, live cell imaging, high performance liquid chromatography}
+\cvitem{Techniques}   {Statistics, image analysis, high-performance computing}
 
 \section{Activities}
 

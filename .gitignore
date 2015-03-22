@@ -29,7 +29,6 @@ out/
 *.mtc1
 *.out
 *.synctex.gz
-*.pdf
 *.fls
 *.fdb*
 

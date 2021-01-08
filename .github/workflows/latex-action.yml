@@ -25,4 +25,9 @@ jobs:
         env:
           DEFAULT_BRANCH: main
 
+      - name: Upload PDF 
+        uses: actions/upload-artifact@v2
+        with:
+          name: PDF
+          path: Trefois_CV.pdf
 

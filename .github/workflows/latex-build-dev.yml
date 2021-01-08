@@ -1,4 +1,4 @@
-name: Latex-Build
+name: Latex-Build-Dev
 
 # Run this workflow every time a new commit pushed to your repository
 on: push
@@ -30,4 +30,3 @@ jobs:
         with:
           name: PDF
           path: Trefois_CV.pdf
-

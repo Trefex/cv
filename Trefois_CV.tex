@@ -54,25 +54,14 @@
 	doi=true,
 	isbn=true,
 	backref=false,
-  backend=biber,
-  eprint=false,
+    backend=biber,
+    eprint=false,
 	%maxnames=1,
 	%minnames=1,
 	maxbibnames=99,
 	%minbibnames=6,
 	%uniquename=false,
 	sorting=ydnt]{biblatex}
-
-	%remove brackets from year
-% \xpatchbibmacro{date+extrayear}{%
-%   \printtext[parens]}{\printtext}{}{}
-
-% remove year from the author bibmacro
-% \xpatchbibmacro{author}{%
-%  \usebibmacro{date+extrayear}}
-%  {}{}{}
-
-
 
 \defbibheading{bibliography}[Publications]{\section{#1}}
 
@@ -87,24 +76,6 @@
 
 %c from texinfo.tex
 \def\ifmonospace{\ifdim\fontdimen3\font=0pt }
-
-%c C plus plus
-\def\Cpp{%
-\ifmonospace%
-    C++%
-\else%
-    C\kern-.1667em\raise.30ex\hbox{\smaller{++}}%
-\fi%
-\spacefactor1000 }
-
-%c C sharp
-\def\Csharp{%
-\ifmonospace%
-    C\#%
-\else%
-    C\kern-.1667em\raise.30ex\hbox{\smaller{\#}}%
-\fi%
-\spacefactor1000 }
 
 % moderncv themes
 \moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
@@ -142,6 +113,7 @@
 
 \renewcommand*{\cvcomputer}[4]{%
   \cvdoubleitem{#1}{\small\raggedright#2}{#3}{\small\raggedright#4}}
+
 % Not all fonts have an sl shape
 \renewcommand*{\cventry}[6]{%
   \cvline{#1}{%
@@ -163,40 +135,6 @@
 
 \begin{document}
 \makecvtitle
-
-%% -----------------------
-%% Education
-%% -----------------------
-
-\section{Education}
-
-\tllabelcventry{2010}{2014}{2010--2014/// }{PhD in Systems Biomedicine}{Luxembourg Centre for Systems Biomedicine (LCSB) -- University of Luxembourg}{Luxembourg}{\textit{very good}}{Advisor: Prof. Dr Rudi Balling}
-
-\tllabelcventry{2006}{2008}{2006--2008///}{Master of Science in Communication Systems}{Ecole Polytechnique Fédérale de Lausanne (EPFL)}{Lausanne}{$5.32/6$}{Advisor: Prof. Jean-Pierre Hubaux} %{Description}  % arguments 3 to 6 can be left empty
-
-\tllabelcventry{2003}{2006}{2003--2006///}{Bachelor of Science in Communication Systems}{Ecole Polytechnique Fédérale de Lausanne (EPFL)}{Lausanne}{}{Advisor: Prof. Dr Patrick Thiran}
-
-\tllabelcventry{1996}{2003}{1996--2003///}{Baccalauréat scientifique (Section B)}{Lycée Athénée de Luxembourg}{Luxembourg}{\textit{cum laude}}{}
-
-%% ------------------------
-%% PhD Section
-%% ------------------------
-
-\section{PhD dissertation}
-\cvitem{title}{\emph{Detection and characterization of critical transitions in mitochondrial activity via high content screening}}
-\cvitem{supervisors}{Prof. Dr Rudi Balling and Dr Paul Antony}
-\cvitem{description}{Critical transitions exist in many dynamical systems, ranging from the Earth's climate system to microcosm populations. During a critical transition, the state of a dynamical system abruptly changes from one stable state to another, typically without obvious prior warning. In this thesis, we set out to study critical transitions in a simple cellular model using mitochondrial membrane potential as readout. To identify critical transitions, we established a modular high-content screening platform allowing systematic perturbation of oxidative phosphorylation. We showed that critical transitions are an intrinsic property of cellular systems and that two-component Gaussian mixture models adequately describe critical transitions dynamics.}
-\cvitem{url}{\url{http://orbilu.uni.lu/handle/10993/17706}} 
-
-%% ------------------------
-%% Master Section
-%% ------------------------
-
-\section{Master thesis}
-\cvitem{title}{\emph{Secure integration of wireless sensor networks into application}}
-\cvitem{supervisors}{Prof. Jean-Pierre Hubaux and Laurent Gomez}
-\cvitem{description}{Performed a risk analysis on integrating wireless sensor networks with business applications using NIST SP 800-30. We analyzed a security scheme which does not rely on complex operations guaranteeing end-to-end confidentiality of sensor data and provided both an \textit{in silico} software demonstration and a hardware validation using physical components.}
-\cvitem{url}{\url{http://infoscience.epfl.ch/record/161912}}
 
 %% ------------------------
 %% Experience
@@ -338,6 +276,49 @@
 \tldatelabelcventryn[center]{2006}{Mar.-Jul. 2006}{Teaching assistant}{Ecole Polytechnique Fédérale de Lausanne}{Switzerland}{}
 {Java object oriented programming course -- Bachelor in communication systems. Helping students on their assignments, projects, overseeing and correcting exams.}{}
 
+
+%% -------------------
+%% Other professional activities
+%% -------------------
+
+\section{Other professional activities}
+
+\tllabelcventry{2016}{0}{2016}{Director-Secretary of the Board of Directors}{Luxembourg Tech School ASBL}{Luxembourg}{}
+{Secretary and Director of the Board of Directors of the Luxembourg Tech School association. \url{www.techschool.lu}}
+
+% eurodoc conference
+
+%% -----------------------
+%% Education
+%% -----------------------
+
+\section{Education}
+
+\tllabelcventry{2010}{2014}{2010--2014///}{PhD in Systems Biomedicine}{Luxembourg Centre for Systems Biomedicine (LCSB) -- University of Luxembourg}{Luxembourg}{\textit{very good}}{Advisor: Prof. Dr Rudi Balling}
+\tllabelcventry{2006}{2008}{2006--2008///}{Master of Science in Communication Systems}{Ecole Polytechnique Fédérale de Lausanne (EPFL)}{Lausanne}{$5.32/6$}{Advisor: Prof. Jean-Pierre Hubaux} %{Description}  % arguments 3 to 6 can be left empty
+\tllabelcventry{2003}{2006}{2003--2006///}{Bachelor of Science in Communication Systems}{Ecole Polytechnique Fédérale de Lausanne (EPFL)}{Lausanne}{}{Advisor: Prof. Dr Patrick Thiran}
+\tllabelcventry{1996}{2003}{1996--2003///}{Baccalauréat scientifique (Section B)}{Lycée Athénée de Luxembourg}{Luxembourg}{\textit{cum laude}}{}
+
+%% ------------------------
+%% PhD Section
+%% ------------------------
+
+\section{PhD dissertation}
+\cvitem{title}{\emph{Detection and characterization of critical transitions in mitochondrial activity via high content screening}}
+\cvitem{supervisors}{Prof. Dr Rudi Balling and Dr Paul Antony}
+\cvitem{description}{Critical transitions exist in many dynamical systems, ranging from the Earth's climate system to microcosm populations. During a critical transition, the state of a dynamical system abruptly changes from one stable state to another, typically without obvious prior warning. In this thesis, we set out to study critical transitions in a simple cellular model using mitochondrial membrane potential as readout. To identify critical transitions, we established a modular high-content screening platform allowing systematic perturbation of oxidative phosphorylation. We showed that critical transitions are an intrinsic property of cellular systems and that two-component Gaussian mixture models adequately describe critical transitions dynamics.}
+\cvitem{url}{\url{http://orbilu.uni.lu/handle/10993/17706}} 
+
+%% ------------------------
+%% Master Section
+%% ------------------------
+
+\section{Master thesis}
+\cvitem{title}{\emph{Secure integration of wireless sensor networks into application}}
+\cvitem{supervisors}{Prof. Jean-Pierre Hubaux and Laurent Gomez}
+\cvitem{description}{Performed a risk analysis on integrating wireless sensor networks with business applications using NIST SP 800-30. We analyzed a security scheme which does not rely on complex operations guaranteeing end-to-end confidentiality of sensor data and provided both an \textit{in silico} software demonstration and a hardware validation using physical components.}
+\cvitem{url}{\url{http://infoscience.epfl.ch/record/161912}}
+
 %% -------------------
 %% Languages
 %% -------------------
@@ -353,7 +334,7 @@
 \section{Skills}
 
 \cvitem{Methodologies}  {ISO 27001, NIST SP 800-30 Rev.1, MONARC risk assessment methodology}
-\cvitem{Languages}    {Java, Python, \Cpp, \Csharp, Ruby, HTML/CSS}
+\cvitem{Languages}    {Java, Python, C\texttt{++}, C\texttt{\#}, Ruby, HTML/CSS}
 \cvitem{Databases}    {MySQL, MariaDB, PostgreSQL, MaxDB}
 \cvitem{Web}          {PHP, JSON, HAML, YAML, XML, Twitter Bootstrap, WebSockets, Ajax, Groovy}
 \cvitem{System administration}{Puppet, Hiera, Foreman, freeIPA, Icinga 2, Vagrant, Bash}
@@ -362,52 +343,32 @@
 \cvitem{Laboratory}   {Cell culture, confocal \& spinning disc microscopy, automatic liquid handling robotics, live cell imaging, high performance liquid chromatography}
 \cvitem{Techniques}   {Statistics, image analysis, high-performance computing}
 
-\section{Activities}
+\section{Associative activities}
 
-\tltextstart[base]{\scriptsize}
-\tllabelcventry{2016}{0}{2016}{Director-Secretary of the Board of Directors}{Luxembourg Tech School ASBL}{Luxembourg}{}
-{Secretary and Director of the Board of Directors of the Luxembourg Tech School association. \url{www.techschool.lu}}
-\tltextstart[base west]{\scriptsize}
+\tllabelcventry{2010}{0}{2010///}{Member}{da Vinci ASBL}{Luxembourg}{}
+{Member of the da Vinci ASBL, association for engineers, architects, scientists, industrials.}
+
+\tllabelcventry{2008}{0}{2008///}{Member}{EPFL Alumni}{Switzerland}{}
+{Member of the EPFL Alumni network.}
 
 % \tltextstart[base]{\scriptsize}
 \tllabelcventry{2014}{2016}{2014--2016///}{Vice-President}{LuxDoc ASBL}{Luxembourg}{}
-{Vice-President of the Luxembourg young researchers association. \url{www.luxdoc.org}}
+{Vice-President of the Luxembourg young researchers association. \url{luxdoc.uni.lu}}
 % \tltextstart[base west]{\scriptsize}
 
 % \tltextstart[base]{\scriptsize}
 \tllabelcventry{2012}{2014}{2012--2014///}{President}{LuxDoc ASBL}{Luxembourg}{}
-{President of the Luxembourg young researchers association. \url{www.luxdoc.org}}
+{President of the Luxembourg young researchers association. \url{luxdoc.uni.lu}}
 % \tltextstart[base west]{\scriptsize}
 
+\tllabelcventry{2011}{2012}{2011--2012///}{Member}{LuxDoc ASBL}{Luxembourg}{}
+{Member of the Luxembourg young researchers association. \url{luxdoc.uni.lu}}
+  
 \tllabelcventry{1995}{2003}{1995--2003///}{Percussionist}{Just Music Bartreng ASBL}{Luxembourg}{}
 {Founding member of the music group and played various percussion instruments in a group of 5-8 people. Obtained the Bronze medal for services rendered to the Luxembourgish cultural life. \url{www.justmusic.lu}}
   
 \nocite{*}
 \printbibliography[title={Publications}]
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% LETTER
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \clearpage
-% \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
-% \date{January 01, 1984}
-% \opening{Dear Sir or Madam,}
-% \closing{Yours faithfully,}
-% \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
-% \makelettertitle
-%
-% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
-%
-% Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
-%
-% Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
-%
-% Albert Einstein discovered that $e=mc^2$ in 1905.
-%
-% \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
-
-%\makeletterclosing
 
 \begin{tikzpicture}[remember picture,overlay]
 	\node[anchor=south, yshift=0.25cm] at (current page.south) {\textit{Last update: \today}};

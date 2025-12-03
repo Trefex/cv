@@ -15,18 +15,18 @@ jobs:
     steps:
       # Checks out a copy of your repository on the ubuntu-latest machine
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # Runs the Super-Linter action
       - name: Build LaTeX
-        uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/latex-action@v3
         with:
           root_file: Trefois_CV.tex
         env:
           DEFAULT_BRANCH: main
 
       - name: Upload PDF 
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: PDF
           path: Trefois_CV.pdf
